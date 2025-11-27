@@ -19,7 +19,8 @@ function RandomUser() {
     }
     {/*added title functionality by using useEffect*/}
     useEffect(() => {
-            document.title = `Welcome ${user.name.first} ${user.name.last}` 
+           if(user)
+            { document.title = `Welcome ${user.name.first} ${user.name.last}` }
     }, [user]);
 
     return (
