@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "../App.css";
 
 
 function RandomUser() {
@@ -25,11 +26,11 @@ function RandomUser() {
         <div>
 
             <h1> User information</h1>
-            <button onClick={GetUserInfo}> Get User</button>
+            <button className="btn" onClick={GetUserInfo}> Get User</button>
 
             {/* Display User */}
             {user && (
-                <div style={{ marginTop: "20px" }}>
+                <div className="adjust">
                     <h3> User name: {user.name.first} {user.name.last}</h3>
                     <h3>Email:  {user.email} </h3>
                     <h2>Country: {user.location.country}</h2>
