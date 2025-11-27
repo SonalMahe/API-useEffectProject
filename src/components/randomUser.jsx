@@ -17,10 +17,9 @@ function RandomUser() {
     const GetUserInfo = () => {
         getData();
     }
+    {/*added title functionality by using useEffect*/}
     useEffect(() => {
-        if (user) {
-            document.title = `Welcome ${user.name.first} ${user.name.last}`
-        }
+            document.title = `Welcome ${user.name.first} ${user.name.last}` 
     }, [user]);
 
     return (
