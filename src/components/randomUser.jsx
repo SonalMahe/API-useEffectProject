@@ -32,9 +32,8 @@ function RandomUser() {
                 <div style={{ marginTop: "20px" }}>
                     <h3> User name: {user.name.first} {user.name.last}</h3>
                     <h3>Email:  {user.email} </h3>
-                    <h2>Country lives in: {user.location.country}</h2>
+                    <h2>Country: {user.location.country}</h2>
                     Image: <img src={user.picture.large} alt={user.name.first} />
-                    Image: <img src={user.picture.medium} alt={user.name.first} />
                   
                     <p></p>
                 </div>
