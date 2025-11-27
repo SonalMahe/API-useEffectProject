@@ -1,16 +1,28 @@
 .btn{
-    color: blue;
-    display: flex;
-    justify-content: center;
+    color: blue;  
+    border-radius: 10%;
+
 }
 h1{
+    text-decoration: underline;
+    color: blue;
     text-align: center;
+    font-size: 24px;
+}
+h2{
+    text-align: center;
+}
+h3{
+    text-align: center;
+}
+img{
+    align-items: center;
 }
 .adjust{
     background-color:burlywood;
     display:inline-block;
-    flex-direction: row;
-    justify-content: center;
-    align-items:center ;
     padding: 10px;
+    gap: 10px;
+    height: auto;
+    width:100%;
 }

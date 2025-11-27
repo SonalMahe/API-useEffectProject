@@ -3,11 +3,11 @@ import "../App.css";
 
 
 function RandomUser() {
-    const [user, setUser] = useState(null);
+    const [user, setUser] = useState();
     const getData = async () => {
         try {
-            const result = await fetch("https://randomuser.me/api/");
-            const apiData = await result.json();
+            const results = await fetch("https://randomuser.me/api/");
+            const apiData = await results.json();
             setUser(apiData.results[0]);
         }
         catch (error) {
@@ -21,10 +21,10 @@ function RandomUser() {
         if (user) {
             document.title = `Welcome ${user.name.first} ${user.name.last}`
         }
-    },[user]);
+    }, [user]);
+
     return (
         <div>
-
             <h1> User information</h1>
             <button className="btn" onClick={GetUserInfo}> Get User</button>
 
@@ -32,11 +32,10 @@ function RandomUser() {
             {user && (
                 <div className="adjust">
                     <h3> User name: {user.name.first} {user.name.last}</h3>
-                    <h3>Email:  {user.email} </h3>
-                    <h2>Country: {user.location.country}</h2>
-                    Image: <img src={user.picture.large} alt={user.name.first} />
-                  
-                    <p></p>
+                    <h3>Email:{user.email} </h3>
+                    <h2>Country:{user.location.country}</h2>
+                    Image:<img src={user.picture.large} alt="image" />
+
                 </div>
             )}
 
@@ -44,6 +43,5 @@ function RandomUser() {
         </div>
     );
 };
-
 
 export default RandomUser;
