@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Logout from "./logout";
 import { useNavigate } from "react-router-dom";
 
 function Login() {
@@ -19,9 +18,11 @@ function Login() {
             localStorage.setItem("loggedInUser", username);
 
             alert("Successfully Logged In");
-            navigate("/random-user");
+            navigate("/randomUser");
+
         } else {
             alert("Invalid username or password");
+
         }
     }
 
@@ -43,9 +44,9 @@ function Login() {
                 />
 
                 <button type="submit">Login</button>
+                <button onClick={() => navigate("/randomUser")}></button>
             </form>
 
-            <Logout />
         </>
     );
 }

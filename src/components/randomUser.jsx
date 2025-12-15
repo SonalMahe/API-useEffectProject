@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Logout from "./logout";
 
 import "../App.css";
 
@@ -19,10 +20,9 @@ function RandomUser() {
     // const GetUserInfo = () => {
     //     getData();
     // }
-    
+
     useEffect(() => {
-           if(user)
-            { document.title = `Welcome ${user.name.first} ${user.name.last}` }
+        if (user) { document.title = `Welcome ${user.name.first} ${user.name.last}` }
     }, [user]);
 
     return (
@@ -40,9 +40,10 @@ function RandomUser() {
 
                 </div>
             )}
-
+            <Logout />
 
         </div>
+        
     );
 };
 

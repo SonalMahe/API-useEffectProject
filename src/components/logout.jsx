@@ -1,8 +1,12 @@
+import { useNavigate } from "react-router-dom";
+
 function Logout() {
+    const navigate = useNavigate();
+
   function handleLogout() {
     localStorage.removeItem("loggedInUser");
-    alert("Logged out successfully");
-  }
+    navigate("/login");
+  };
 
   return <button onClick={handleLogout}>Logout</button>;
 }
