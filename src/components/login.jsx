@@ -1,5 +1,6 @@
-import React from "react";
-import {useNavigate} from "react-router-dom";
+import React, { useState } from "react";
+import Logout from "./logout";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
     const [username, setUsername] = useState("");
@@ -9,46 +10,44 @@ function Login() {
     function userLogin(e) {
         e.preventDefault();
 
-        const users = JSON.parse(localStorage.getItem("users") || "{}");
+        // Get users from localStorage
+        const users = JSON.parse(localStorage.getItem("users")) || {};
 
+        // Check credentials
         if (users[username] && users[username] === password) {
-            localStorage.setItem("loggedIn", username);
+            // Store logged-in user
+            localStorage.setItem("loggedInUser", username);
 
             alert("Successfully Logged In");
-            localStorage.setItem("loggedIn", true);
-            navigate ("/randomUser")
-
+            navigate("/random-user");
         } else {
             alert("Invalid username or password");
         }
     }
-  return (
-    <div className="auth-container">
-      <h2> User-Login</h2>
 
-      <form onSubmit={userLogin}>
-        <input
-          type="text"
-          placeholder="Enter username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          required
-        />
+    return (
+        <>
+            <h2>User Login</h2>
 
-        <input
-          type="password"
-          placeholder="Enter password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
+            <form onSubmit={userLogin}>
+                <input type="text" placeholder="Enter username"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
+                    required
+                />
 
-        <button type="submit">Login</button>
-        <button onClick={() => navigate("/randomUser")} style={{ marginTop: "10px" }}>
-        </button>
-      </form>
+                <input type="password" placeholder="Enter password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
+                />
 
-      <Logout />
-    </div>
-  );
+                <button type="submit">Login</button>
+            </form>
+
+            <Logout />
+        </>
+    );
 }
+
+export default Login;
