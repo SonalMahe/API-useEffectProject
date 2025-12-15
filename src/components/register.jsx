@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "../App.css";
 
 function Register() {
     const [username, setUsername] = useState("");
@@ -19,13 +20,13 @@ function Register() {
         users[username] = password;
         localStorage.setItem("users", JSON.stringify(users));
 
-        alert("Account created! Please log in.");
-        navigate("/login")
+        alert("Account created!Click login");
+        navigate("/login");
     }
 
     return (
         <>
-            <h2>Create Account</h2>
+            <h1>Create Account</h1>
             <form onSubmit={handleRegister}>
                 <input
                     type="text"
@@ -45,8 +46,7 @@ function Register() {
 
                 <button type="submit">Register</button>
 
-                <button onClick={() => navigate("/login")} style= {{color: "#red"}}>
-                    Back to Login
+                <button onClick={() => navigate("/login")} style={{ color: "#ec5656ff" }}>  Back to Login
                 </button>
             </form>
         </>

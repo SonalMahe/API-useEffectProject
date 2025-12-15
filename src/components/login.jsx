@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "../App.css";
+
 
 function Login() {
     const [username, setUsername] = useState("");
@@ -28,7 +30,7 @@ function Login() {
 
     return (
         <>
-            <h2>User Login</h2>
+            <h1>User Login</h1>
 
             <form onSubmit={userLogin}>
                 <input type="text" placeholder="Enter username"
@@ -44,7 +46,7 @@ function Login() {
                 />
 
                 <button type="submit">Login</button>
-                <button onClick={() => navigate("/randomUser")}></button>
+                <button onClick={() => navigate("/register")}>Register</button>
             </form>
 
         </>

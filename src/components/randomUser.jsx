@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Logout from "./logout";
-
 import "../App.css";
 
 
 function RandomUser() {
+    const navigate = useNavigate();
     const [user, setUser] = useState();
     const getData = async () => {
         try {
@@ -17,9 +17,9 @@ function RandomUser() {
             console.log("error in fetching user info", error);
         }
     }
-    // const GetUserInfo = () => {
-    //     getData();
-    // }
+    const GetUserInfo = () => {
+        getData();
+    }
 
     useEffect(() => {
         if (user) { document.title = `Welcome ${user.name.first} ${user.name.last}` }
@@ -28,7 +28,7 @@ function RandomUser() {
     return (
         <div>
             <h1> User information</h1>
-            <button className="btn" onClick={getData}> Get User</button>
+            <button className="btn" onClick={GetUserInfo}> Get User</button>
 
             {/* Display User */}
             {user && (
@@ -41,9 +41,8 @@ function RandomUser() {
                 </div>
             )}
             <Logout />
-
         </div>
-        
+
     );
 };
 
