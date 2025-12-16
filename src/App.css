@@ -35,10 +35,12 @@ img{
 .adjust{
     background-color:rgb(90, 183, 109);
     display:inline-block;
+    justify-content: center;
+    align-items: center;
     padding: 10px;
     gap: 10px;
-    height: 60vh;
-    width: 60%;
+    height: 50vh;
+    width: 50%;
 
 }
 
