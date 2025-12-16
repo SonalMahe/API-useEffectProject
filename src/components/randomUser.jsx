@@ -5,7 +5,7 @@ import "../App.css";
 
 
 function RandomUser() {
-    const navigate = useNavigate();
+    
     const [user, setUser] = useState();
     const getData = async () => {
         try {
@@ -21,8 +21,16 @@ function RandomUser() {
         getData();
     }
 
+    // ✅ Fetch user once on page load
     useEffect(() => {
-        if (user) { document.title = `Welcome ${user.name.first} ${user.name.last}` }
+        getData();
+    }, []);
+
+    useEffect(() => {
+        if (user) {
+            document.title = `Welcome ${user.name.first} ${user.name.last}`
+            
+        }
     }, [user]);
 
     return (

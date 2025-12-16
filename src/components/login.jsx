@@ -38,15 +38,18 @@ function Login() {
                     onChange={(e) => setUsername(e.target.value)}
                     required
                 />
-
+                <br />
+                <br />
                 <input type="password" placeholder="Enter password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     required
                 />
+                <br />
+                <br />
 
-                <button type="submit">Login</button>
-                <button onClick={() => navigate("/register")}>Register</button>
+                <button className="btn" type="submit">Login</button>
+                <button className="btn" onClick={() => navigate("/register")}>Register</button>
             </form>
 
         </>

@@ -35,7 +35,8 @@ function Register() {
                     onChange={(e) => setUsername(e.target.value)}
                     required
                 />
-
+                <br />
+                <br />
                 <input
                     type="password"
                     placeholder="Enter password"
@@ -43,10 +44,10 @@ function Register() {
                     onChange={(e) => setPassword(e.target.value)}
                     required
                 />
-
-                <button type="submit">Register</button>
-
-                <button onClick={() => navigate("/login")} style={{ color: "#ec5656ff" }}>  Back to Login
+                <br />
+                <br />
+                <button className="btn" type="submit">Register</button>
+                <button className="btn" onClick={() => navigate("/login")} > Back to Login
                 </button>
             </form>
         </>
