@@ -27,7 +27,7 @@ function Register() {
     return (
         <>
             <h1>Create Account</h1>
-            <form onSubmit={handleRegister}>
+            <form id="register" onSubmit={handleRegister}>
                 <input
                     type="text"
                     placeholder="Enter username"

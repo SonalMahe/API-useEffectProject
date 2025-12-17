@@ -20,7 +20,7 @@ function Login() {
             localStorage.setItem("loggedInUser", username);
 
             alert("Successfully Logged In");
-            navigate("/randomUser");
+            navigate("/random-user")
 
         } else {
             alert("Invalid username or password");
@@ -32,7 +32,7 @@ function Login() {
         <>
             <h1>User Login</h1>
 
-            <form onSubmit={userLogin}>
+            <form id="test" onSubmit={userLogin}>
                 <input type="text" placeholder="Enter username"
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
@@ -49,7 +49,15 @@ function Login() {
                 <br />
 
                 <button className="btn" type="submit">Login</button>
-                <button className="btn" onClick={() => navigate("/register")}>Register</button>
+               
+                <button
+  className="btn"
+  type="button"
+  onClick={() => navigate("/register")}
+>
+  Register
+</button>
+
             </form>
 
         </>

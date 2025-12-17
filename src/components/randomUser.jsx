@@ -1,11 +1,9 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import Logout from "./logout";
 import "../App.css";
 
 
 function RandomUser() {
-    
     const [user, setUser] = useState();
     const getData = async () => {
         try {
@@ -21,7 +19,7 @@ function RandomUser() {
         getData();
     }
 
-    // ✅ Fetch user once on page load
+    // Fetch user once on page load
     useEffect(() => {
         getData();
     }, []);
@@ -29,7 +27,6 @@ function RandomUser() {
     useEffect(() => {
         if (user) {
             document.title = `Welcome ${user.name.first} ${user.name.last}`
-            
         }
     }, [user]);
 

@@ -1,10 +1,11 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import Login from "../src/components/login.jsx";
-import RandomUser from "../src/components/randomUser.jsx";
+import Login from "./components/login.jsx";
+import RandomUser from "./components/randomUser.jsx";
 import Register from "./components/register.jsx";
 
 function App() {
-  const isLoggedIn = localStorage.getItem("loggedInUser");
+ const isLoggedIn = localStorage.getItem("loggedInUser");
+
 
   return (
     <BrowserRouter>
@@ -15,7 +16,7 @@ function App() {
         <Route path= "/register" element={<Register /> } />
 
         <Route
-          path="/randomUser"
+          path="/random-user"
           element={
             isLoggedIn ? <RandomUser /> : <Navigate to="/login" />
           }
